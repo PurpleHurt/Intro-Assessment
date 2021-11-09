@@ -14,45 +14,61 @@ let total = 0
 // Code to update name display 
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-
-
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
-document.getElementById('add-gb').addEventListener('click', function() {addGB()})
-    
-
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
-
-function addGB(){
-        document.getElementById('qty-gb').textContent = gb; gb++;
-   }
-
-
-document.getElementById('minus-gb').addEventListener('click', function(e) {minusGB()})
-function minusGB(){
-           document.getElementById('qty-gb').textContent = gb; gb--;
+//Update Total
+function updateTotal(){
+        if(total >= 0)
+         document.getElementById('qty-total').textContent = gb + cc + sugar;
+         console.log('Total was updated')
 }
 
+// Add Gingerbread
+document.getElementById('add-gb').addEventListener('click', function() {addGB()})
+function addGB(){
+        gb++;
+         document.getElementById('qty-gb').textContent = gb;
+         updateTotal()
+         console.log('Gingerbread+ was clicked')
+}
+// Subtract Gingerbread
+document.getElementById('minus-gb').addEventListener('click', function() {minusGB()})
+function minusGB(){
+        if(gb >= 1){
+        gb--;
+         document.getElementById('qty-gb').textContent = gb;
+         updateTotal()
+         console.log('Gingerbread- was clicked')}
+}
+// Add Chocolate Chip
 document.getElementById('add-cc').addEventListener('click', function() {addCC()})
 function addCC(){
-        document.getElementById('qty-cc').textContent = cc; cc++;
+        cc++;
+         document.getElementById('qty-cc').textContent = cc;
+         updateTotal()
+         console.log('Chocolate Chip+ was clicked')
 }
-
+// Subtact Chocolate Chip
 document.getElementById('minus-cc').addEventListener('click', function() {minusCC()})
 function minusCC(){
-           document.getElementById('qty-cc').textContent = cc; cc--;
+        if(cc >= 1){
+        cc--;
+         document.getElementById('qty-cc').textContent = cc;
+         updateTotal()
+         console.log('Chocolate Chip- was clicked')}
 }
-
+// Add Sugar Sprinkle
 document.getElementById('add-sugar').addEventListener('click', function() {addSugar()})
 function addSugar(){
-        document.getElementById('qty-sugar').textContent = sugar; sugar++;
+        sugar++;
+        document.getElementById('qty-sugar').textContent = sugar;
+        updateTotal() 
+        console.log('Sugar Sprinkle- was clicked')
 }
-
+// Subtract Sugar Sprinkle
 document.getElementById('minus-sugar').addEventListener('click', function() {minusSugar()})
 function minusSugar(){
-           document.getElementById('qty-sugar').textContent = sugar; sugar--;
+        if(sugar >= 1){
+        sugar--;
+         document.getElementById('qty-sugar').textContent = sugar; 
+         updateTotal()
+         console.log('Sugar Sprinkle- was clicked')}
 }
-
-
-
-

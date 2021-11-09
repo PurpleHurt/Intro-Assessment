@@ -32,7 +32,7 @@ function addGB(){
 // Subtract Gingerbread
 document.getElementById('minus-gb').addEventListener('click', function() {minusGB()})
 function minusGB(){
-        if(gb >= 1){
+        if(gb > 0){
         gb--;
          document.getElementById('qty-gb').textContent = gb;
          updateTotal()
@@ -49,7 +49,7 @@ function addCC(){
 // Subtact Chocolate Chip
 document.getElementById('minus-cc').addEventListener('click', function() {minusCC()})
 function minusCC(){
-        if(cc >= 1){
+        if(cc > 0){
         cc--;
          document.getElementById('qty-cc').textContent = cc;
          updateTotal()
@@ -66,7 +66,7 @@ function addSugar(){
 // Subtract Sugar Sprinkle
 document.getElementById('minus-sugar').addEventListener('click', function() {minusSugar()})
 function minusSugar(){
-        if(sugar >= 1){
+        if(sugar > 0){
         sugar--;
          document.getElementById('qty-sugar').textContent = sugar; 
          updateTotal()
